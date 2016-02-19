@@ -134,7 +134,15 @@ namespace XMPP.common
 
         private void Init()
         {
-            _client = new HttpClient();
+            //TODO test this - https://blog.kulman.sk/ignoring-certificate-errors-in-windows-phone-8-1/
+            if (_manager.Settings.AllowUntrustedCertificates)
+            {
+                var filter = new Windows.Web.Http.Filters.HttpBaseProtocolFilter();
+                filter.IgnorableServerCertificateErrors.Add(Windows.Security.Cryptography.Certificates.ChainValidationResult.Untrusted);
+                _client = new HttpClient(filter);
+            }
+            else
+                _client = new HttpClient();
 
             _disconnecting = new ManualResetEventSlim(false);
             _connectionError = new ManualResetEventSlim(false);

@@ -78,6 +78,26 @@ namespace XMPP
         public event Events.ExternalDisconnected OnDisconnected { add { Manager.Events.OnDisconnected += value; } remove { Manager.Events.OnDisconnected -= value; } }
 
         public event Events.ExternalReceive OnReceive { add { Manager.Events.OnReceive += value; } remove { Manager.Events.OnReceive -= value; } }
+        
+        //XEP-0184
+        /// <exception cref="InvalidOperationException">You must set Client.Settings.EnableReceipt to 'true' to have this event fired!</exception>
+        public event Events.ExternalReceipt OnReceipt
+        {
+            add
+            {
+                if (!Settings.EnableReceipt)
+                    throw new InvalidOperationException("You must set Client.Settings.EnableReceipt to 'true' to have this event fired!");
+
+                Manager.Events.OnReceipt += value;
+            }
+            remove
+            {
+                if (!Settings.EnableReceipt)
+                    throw new InvalidOperationException("You must set Client.Settings.EnableReceipt to 'true' to have this event fired!");
+
+                Manager.Events.OnReceipt -= value;
+            }
+        }
 
         public event Events.ExternalChunk OnChunk { add { Manager.Events.OnChunk += value; } remove { Manager.Events.OnChunk -= value; } }
         #endregion

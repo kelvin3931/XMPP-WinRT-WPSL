@@ -54,6 +54,6 @@ namespace XMPP.common
         public int QueryCount = 50;
 
         //XEP-0184
-        public bool AutoAck = false;
+        public bool EnableReceipt = false;
     }
 }

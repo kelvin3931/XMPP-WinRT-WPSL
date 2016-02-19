@@ -226,6 +226,13 @@ namespace XMPP.common
                 public void Receive(object sender, TagEventArgs e) { if (OnReceive != null) OnReceive(sender, e); }
             #endregion
 
+            #region Receipt
+                public event ExternalReceipt OnReceipt;
+                public delegate void ExternalReceipt(object sender, TagEventArgs e);
+                public void Receipt(object sender, Tag tag) { Receipt(sender, new TagEventArgs(tag)); }
+                public void Receipt(object sender, TagEventArgs e) { if (OnReceipt != null) OnReceipt(sender, e); }
+            #endregion
+
             #region Error
                 public event ExternalError OnError;
                 public delegate void ExternalError(object sender, ErrorEventArgs e);

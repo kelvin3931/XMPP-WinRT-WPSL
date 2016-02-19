@@ -42,16 +42,29 @@ namespace XMPP.states
         public override void Execute(Tag data = null)
         {
             if (data != null)
-                Manager.Events.Receive(this, data);
-
-            if (Manager.Settings.AutoAck && data is tags.jabber.client.message)
             {
-                var req = data.Elements().FirstOrDefault(e => e.Name.LocalName == "request");
-                if (req != null && req.Name.NamespaceName == tags.xmpp.receipts.Namespace.Name)
+                if (Manager.Settings.EnableReceipt && data is tags.jabber.client.message)
                 {
-                    Manager.State = new AckState(Manager);
-                    Manager.State.Execute(data);
+                    //XEP-0184 enabled
+                    var rec = data.Elements().FirstOrDefault(el => el.Name.LocalName == tags.xmpp.receipts.Namespace.received.LocalName);
+                    if (rec != null)
+                        Manager.Events.Receipt(this, data); //it's a receipt, not going to show as message
+                    else
+                    {
+                        //it's not a recipt, gotta show it
+                        Manager.Events.Receive(this, data);
+
+                        //if there's receipt request, I'll send it in AckState
+                        var req = data.Elements().FirstOrDefault(e => e.Name.LocalName == tags.xmpp.receipts.Namespace.request.LocalName);
+                        if (req != null && req.Name.NamespaceName == tags.xmpp.receipts.Namespace.Name)
+                        {
+                            Manager.State = new AckState(Manager);
+                            Manager.State.Execute(data);
+                        }
+                    }
                 }
+                else
+                    Manager.Events.Receive(this, data); //XEP-0184 disabled
             }
         }
     }
