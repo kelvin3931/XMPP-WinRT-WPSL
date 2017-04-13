@@ -8,6 +8,9 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="button" Content="Connect" HorizontalAlignment="Left" Margin="96,77,0,0" VerticalAlignment="Top" Click="btn_connect"/>
+        <Button x:Name="button_Copy" Content="Send Message" HorizontalAlignment="Left" Margin="96,150,0,0" VerticalAlignment="Top" Click="btn_sendMsg"/>
+        <Button x:Name="button_Copy1" Content="Disconnect" HorizontalAlignment="Left" Margin="96,223,0,0" VerticalAlignment="Top" Click="btn_disconnect"/>
 
     </Grid>
 </Page>

@@ -5,16 +5,21 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testXmpp", "testXmpp\testXmpp.csproj", "{F68E0DE6-A32D-4872-B597-C7256B96A874}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMPP", "..\XMPP\XMPP\XMPP.csproj", "{93444568-5663-464D-987C-946D91D965F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
 		Release|ARM = Release|ARM
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F68E0DE6-A32D-4872-B597-C7256B96A874}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{F68E0DE6-A32D-4872-B597-C7256B96A874}.Debug|ARM.ActiveCfg = Debug|ARM
 		{F68E0DE6-A32D-4872-B597-C7256B96A874}.Debug|ARM.Build.0 = Debug|ARM
 		{F68E0DE6-A32D-4872-B597-C7256B96A874}.Debug|ARM.Deploy.0 = Debug|ARM
@@ -24,6 +29,7 @@ Global
 		{F68E0DE6-A32D-4872-B597-C7256B96A874}.Debug|x86.ActiveCfg = Debug|x86
 		{F68E0DE6-A32D-4872-B597-C7256B96A874}.Debug|x86.Build.0 = Debug|x86
 		{F68E0DE6-A32D-4872-B597-C7256B96A874}.Debug|x86.Deploy.0 = Debug|x86
+		{F68E0DE6-A32D-4872-B597-C7256B96A874}.Release|Any CPU.ActiveCfg = Release|x86
 		{F68E0DE6-A32D-4872-B597-C7256B96A874}.Release|ARM.ActiveCfg = Release|ARM
 		{F68E0DE6-A32D-4872-B597-C7256B96A874}.Release|ARM.Build.0 = Release|ARM
 		{F68E0DE6-A32D-4872-B597-C7256B96A874}.Release|ARM.Deploy.0 = Release|ARM
@@ -33,6 +39,22 @@ Global
 		{F68E0DE6-A32D-4872-B597-C7256B96A874}.Release|x86.ActiveCfg = Release|x86
 		{F68E0DE6-A32D-4872-B597-C7256B96A874}.Release|x86.Build.0 = Release|x86
 		{F68E0DE6-A32D-4872-B597-C7256B96A874}.Release|x86.Deploy.0 = Release|x86
+		{93444568-5663-464D-987C-946D91D965F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93444568-5663-464D-987C-946D91D965F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93444568-5663-464D-987C-946D91D965F1}.Debug|ARM.ActiveCfg = Debug|ARM
+		{93444568-5663-464D-987C-946D91D965F1}.Debug|ARM.Build.0 = Debug|ARM
+		{93444568-5663-464D-987C-946D91D965F1}.Debug|x64.ActiveCfg = Debug|x64
+		{93444568-5663-464D-987C-946D91D965F1}.Debug|x64.Build.0 = Debug|x64
+		{93444568-5663-464D-987C-946D91D965F1}.Debug|x86.ActiveCfg = Debug|x86
+		{93444568-5663-464D-987C-946D91D965F1}.Debug|x86.Build.0 = Debug|x86
+		{93444568-5663-464D-987C-946D91D965F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93444568-5663-464D-987C-946D91D965F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93444568-5663-464D-987C-946D91D965F1}.Release|ARM.ActiveCfg = Release|ARM
+		{93444568-5663-464D-987C-946D91D965F1}.Release|ARM.Build.0 = Release|ARM
+		{93444568-5663-464D-987C-946D91D965F1}.Release|x64.ActiveCfg = Release|x64
+		{93444568-5663-464D-987C-946D91D965F1}.Release|x64.Build.0 = Release|x64
+		{93444568-5663-464D-987C-946D91D965F1}.Release|x86.ActiveCfg = Release|x86
+		{93444568-5663-464D-987C-946D91D965F1}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
